@@ -1,0 +1,16 @@
+.custom-button {
+  .main-button {
+    background-color: transparent;
+    width: 30vw;
+    height: 5vw;
+    margin: 0.5em;
+    color: #ffffff;
+    border: 1px solid #53565d;
+    font-family: "Rajdhani", sans-serif;
+  }
+  .main-button:hover {
+    background-color: #ffffff;
+    color: #53565d;
+    cursor: pointer;
+  }
+}

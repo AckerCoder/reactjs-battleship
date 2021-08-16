@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+import { Link } from 'react-router-dom';
 import Cover from "../../components/cover/cover.component"
 import CustomButton from '../../components/custom-button/custom-button.component';
 import CustomInput from '../../components/custom-input/custom-input.component';
@@ -81,7 +82,9 @@ const SettingsPage = () => {
                     </div>
                 </div>
             </div>
-            <CustomButton main>LET'S BATTLE</CustomButton>
+            <Link to="game" params={{numberOfTurns: numberOfTurns, playerName: playerName}}>
+                <CustomButton main>LET'S BATTLE</CustomButton>        
+            </Link>
         </div>
     )
 }

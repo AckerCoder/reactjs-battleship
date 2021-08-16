@@ -11,9 +11,9 @@ const HomePage = () => {
         <div className="homepage">
             <Cover>React Battleship</Cover>
             <Link to="/settings-page">
-                <CustomButton>PLAY</CustomButton>
+                <CustomButton main>PLAY</CustomButton>
             </Link>
-            <CustomButton>ALL STARS</CustomButton>
+            <CustomButton main>ALL STARS</CustomButton>
         </div>
     )
 }

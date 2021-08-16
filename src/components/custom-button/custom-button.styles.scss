@@ -1,5 +1,8 @@
 .custom-button {
-  .main-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .main {
     background-color: transparent;
     width: 30vw;
     height: 5vw;
@@ -8,9 +11,24 @@
     border: 1px solid #53565d;
     font-family: "Rajdhani", sans-serif;
   }
-  .main-button:hover {
+  .main:hover {
     background-color: #ffffff;
     color: #53565d;
+    cursor: pointer;
+  }
+
+  .label {
+    color: #ffffff;
+  }
+  .setting {
+    background-color: transparent;
+    margin: 0.5em;
+    color: #ffffff;
+    border: 0;
+    font-family: "Rajdhani", sans-serif;
+  }
+
+  .setting:hover {
     cursor: pointer;
   }
 }

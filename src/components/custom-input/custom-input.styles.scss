@@ -1,0 +1,17 @@
+.custom-input {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  input {
+    width: 5em;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    color: white;
+    font-family: "Rajdhani", sans-serif;
+    text-align: center;
+  }
+  input:focus {
+    border: 3px solid #555;
+  }
+}

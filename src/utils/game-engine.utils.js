@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require("uuid");
+
 const ships = [
   {
     name: "ship1",
@@ -30,7 +32,10 @@ const generateEmptyBoard = () => {
   for (let i = 0; i < 10; i++) {
     let arrow = [];
     for (let j = 0; j < 10; j++) {
-      arrow.push("");
+      arrow.push({
+        status: "normal",
+        shipName: null,
+      });
     }
     board.push(arrow);
   }
@@ -50,7 +55,8 @@ const getRandomIndex = () => {
   return Math.floor(Math.random() * 10);
 };
 
-const isCoordinateOccuped = (coordinate) => (coordinate === "" ? false : true);
+const isCoordinateOccuped = (coordinate) =>
+  coordinate.shipName === null ? false : true;
 
 const setShip = (ship, board) => {
   let isSetUp = false;
@@ -75,8 +81,9 @@ const setShip = (ship, board) => {
         }
       }
       if (isItPossible) {
+        const shipUniqueName = uuidv4();
         for (let i = 0; i < ship.length; i++) {
-          board[axisX + i][axisY] = ship.name;
+          board[axisX + i][axisY].shipName = shipUniqueName;
         }
         isSetUp = true;
       }
@@ -92,8 +99,9 @@ const setShip = (ship, board) => {
         }
       }
       if (isItPossible) {
+        const shipUniqueName = uuidv4();
         for (let i = 0; i < ship.length; i++) {
-          board[axisX][axisY + i] = ship.name;
+          board[axisX][axisY + i].shipName = shipUniqueName;
         }
         isSetUp = true;
       }
@@ -106,21 +114,42 @@ const setBoardUp = (board) => {
     for (let counter = 0; counter < ship.quantity; counter++) {
       setShip(ship, board);
     }
+    return 1;
   });
 };
 
-// const printBoard = (board) => {
-//   for (let i = 0; i < 10; i++) {
-//     let line = "";
-//     for (let j = 0; j < 10; j++) {
-//       if (board[i][j] === "") {
-//         line = line + "vacio   ";
-//       } else {
-//         line += board[i][j] + "   ";
-//       }
-//     }
-//     console.log(line);
-//   }
-// };
+const printBoard = (board) => {
+  for (let i = 0; i < 10; i++) {
+    let line = "";
+    for (let j = 0; j < 10; j++) {
+      if (board[i][j].shipName === null) {
+        line = line + "vacio   ";
+      } else {
+        line += board[i][j].shipName + "   ";
+      }
+    }
+    console.log(line);
+  }
+};
 
-module.exports = { generateEmptyBoard, setBoardUp };
+const isShipDestroyed = (shipName, board) => {
+  for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+      if (
+        board[i][j].shipName === shipName &&
+        board[i][j].status === "normal"
+      ) {
+        return false;
+      }
+    }
+  }
+  return true;
+};
+
+// let boardX = generateEmptyBoard();
+
+// setBoardUp(boardX);
+
+// printBoard(boardX);
+
+module.exports = { generateEmptyBoard, setBoardUp, isShipDestroyed };

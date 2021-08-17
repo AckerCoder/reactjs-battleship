@@ -1,0 +1,15 @@
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7vh;
+  height: 7vh;
+  border: 1px solid white;
+  .animation {
+    width: 5vh;
+    height: 5vh;
+  }
+}
+.cell:hover {
+  cursor: pointer;
+}

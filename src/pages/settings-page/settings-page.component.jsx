@@ -14,7 +14,7 @@ const SettingsPage = () => {
     const [gameMode, setGameMode] = useState("SIMPLE");
     const [playerName, setPlayerName] = useState("RAMDOM PLAYER");
     const [gameDifficulty, setGameDifficulty] = useState("MEDIUM");
-    const [numberOfTurns, setNumberOfTurns] = useState(null);
+    const [numberOfTurns, setNumberOfTurns] = useState(-1);
 
     const changeGameMode = () => {
         if(gameMode === "SIMPLE"){
@@ -82,7 +82,7 @@ const SettingsPage = () => {
                     </div>
                 </div>
             </div>
-            <Link to="game" params={{numberOfTurns: numberOfTurns, playerName: playerName}}>
+            <Link to={`game/${numberOfTurns}/${playerName}`}>
                 <CustomButton main>LET'S BATTLE</CustomButton>        
             </Link>
         </div>

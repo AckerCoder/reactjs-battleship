@@ -13,7 +13,9 @@ const HomePage = () => {
             <Link to="/settings-page">
                 <CustomButton main>PLAY</CustomButton>
             </Link>
-            <CustomButton main>ALL STARS</CustomButton>
+            <Link to="/score-table">
+                <CustomButton main>ALL STARS</CustomButton>
+            </Link>
         </div>
     )
 }

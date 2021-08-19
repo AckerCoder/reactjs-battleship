@@ -36,6 +36,7 @@ const Game = () => {
             )
         )
         if(counterOfBoomShips === numberOfShipsFragments){history.push("/score-table"); await addScore(playerName, points);}
+        if(turnsLeft === 0){history.push("/you-lost");}
     }
 
     useEffect(() => {

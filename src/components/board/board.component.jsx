@@ -53,15 +53,9 @@ const Board = ({board, updateBoard, onMinusTurn, onMinusTenPoints}) => {
                                 arrow.map( (cell, j) => {
                                     let finalKey = i.toString() + j.toString();
                                     let imgSrc = null;
-                                    if(board[i][j].status === "boomShip"){
-                                        imgSrc = pinRed;
-                                    }
-                                    if(board[i][j].status === "boomWater"){
-                                        imgSrc = pinWhite;
-                                    }
-                                    if(board[i][j].status === "shipDestroyed"){
-                                        imgSrc = pinGreen;
-                                    }
+                                    if(board[i][j].status === "boomShip"){imgSrc = pinRed;}
+                                    if(board[i][j].status === "boomWater"){imgSrc = pinWhite;}
+                                    if(board[i][j].status === "shipDestroyed"){imgSrc = pinGreen;}
                                     return <Cell imgSrc={imgSrc} key={finalKey} clicker={()=>onClickCell(i,j)}>{board[i][j]}</Cell>
                                 }
                             ))

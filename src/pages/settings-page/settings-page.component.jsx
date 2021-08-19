@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import Cover from "../../components/cover/cover.component"
 import CustomButton from '../../components/custom-button/custom-button.component';
 import CustomInput from '../../components/custom-input/custom-input.component';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-
+import TurnsController from '../../components/turns-controller/turns-controller.component';
 import "./settings-page.styles.scss"
 
 const SettingsPage = () => {
@@ -63,21 +61,7 @@ const SettingsPage = () => {
                 <div className="number-of-turns">
                     <h3 className="title">NUMBER OF TURNS</h3>
                     <div className="controller">
-                        {
-                            gameMode === "CUSTOM"?
-                                <CustomButton setting onClick={()=>{let newNumberOfTurns = numberOfTurns - 1; setNumberOfTurns(newNumberOfTurns)}}>
-                                    <FontAwesomeIcon icon ={faAngleLeft}/>
-                                </CustomButton>
-                            :null
-                        }
-                        <span className="counter">{numberOfTurns > 0?numberOfTurns: <>&infin;</>}</span>
-                        {
-                            gameMode === "CUSTOM"?
-                                <CustomButton setting onClick={()=>{let newNumberOfTurns = numberOfTurns + 1; setNumberOfTurns(newNumberOfTurns)}}>
-                                    <FontAwesomeIcon icon ={faAngleRight}/>
-                                </CustomButton>
-                            :null
-                        }
+                        <TurnsController gameMode={gameMode} numberOfTurns={numberOfTurns} setNumberOfTurns={setNumberOfTurns}/>
                     </div>
                 </div>
             </div>

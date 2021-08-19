@@ -1,0 +1,13 @@
+.turns-controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .counter {
+    color: white;
+    font-size: 15pt;
+  }
+  .controller {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -10,6 +10,8 @@
     color: white;
   }
   .table {
+    height: 60vh;
     margin: 2em 0;
+    overflow-y: auto;
   }
 }

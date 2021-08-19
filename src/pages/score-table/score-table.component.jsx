@@ -22,6 +22,7 @@ const ScoreTable = () => {
                 {
                     scores?scores.map((score,i) => <CellPosition playerName={score.playerName} position={i+1} score={score.score} key={i}/> ):null
                 }
+                
             </div>
             <Link to="/">
                 <CustomButton main>MAIN MENU</CustomButton>

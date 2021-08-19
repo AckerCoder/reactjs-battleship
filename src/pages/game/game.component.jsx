@@ -51,7 +51,7 @@ const Game = () => {
             <div className="data">
                 <Cover>React Battleship</Cover>
                 <BoardData data={playerName} label={"PLAYER NAME"}/>
-                <BoardData data={turnsLeft} label={"TURNS LEFT"}/>
+                <BoardData data={parseInt(turnsLeft,10)} label={"TURNS LEFT"}/>
                 <BoardData data={points} label={"POINTS"}/>
             </div>
         </div>

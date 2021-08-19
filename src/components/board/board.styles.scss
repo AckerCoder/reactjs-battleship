@@ -3,29 +3,7 @@
   grid-template-columns: 7vh 7vh 7vh 7vh 7vh 7vh 7vh 7vh 7vh 7vh;
   height: 70vh;
 }
-.column-tags {
-  display: flex;
-  margin-left: 2-1vh;
-  .column-tag {
-    display: flex;
-    justify-content: center;
-    width: 7vh;
-    color: white;
-    border: 1px solid transparent;
-    background: violet;
-  }
-}
+
 .row-direction {
   display: flex;
-  .row-tags {
-    display: flex;
-    flex-direction: column;
-    .row-tag {
-      display: flex;
-      align-items: center;
-      height: 7vh;
-      color: white;
-      border: 1px solid transparent;
-    }
-  }
 }

@@ -1,50 +1,51 @@
 import React from 'react';
 import Cell from "../cell/cell.component";
+import ColumnTags from "../column-tags/column-tags.component";
+import { isShipDestroyed } from '../../utils/game-engine.utils';
+
+
+import pinRed from "../../assets/pins/red.png";
+import pinWhite from "../../assets/pins/white.png";
+import pinGreen from "../../assets/pins/green.png";
 import "./board.styles.scss"
+import RowTags from '../row-tags/row-tags.component';
 
-import pinRed from "../../assets/gifts/red.png";
-import pinWhite from "../../assets/gifts/white.png";
-import pinGreen from "../../assets/gifts/green.png";
-
-const Board = ({board, updateBoard, isShipDestroyed, onMinusTurn}) => {
-    const onClick = (x,y) => {
+const Board = ({board, updateBoard, onMinusTurn, onMinusTenPoints}) => {
+    const onClickCell = (x,y) => {
         let boardUpdated = board;
-        switch(boardUpdated[x][y].shipName){
-            case null:
-                boardUpdated[x][y].status = "boomWater";
-                updateBoard([...boardUpdated]);
-                onMinusTurn();
-                break;
-            case "boomWater":
-                break;
-            case "boomShip":
-                break;    
-            default:
-                onMinusTurn();
-                let shipName = boardUpdated[x][y].shipName;
-                boardUpdated[x][y].status = "boomShip"
-                if(isShipDestroyed(shipName, boardUpdated)){
-                    for(let i = 0; i < 10; i++){
-                        for(let j = 0; j < 10; j++){
-                            if(boardUpdated[i][j].shipName === shipName){
-                                boardUpdated[i][j].status = "shipDestroyed"
-                            }
+        if(boardUpdated[x][y].shipName === null && boardUpdated[x][y].status === "normal"){
+            boardUpdated[x][y].status = "boomWater";
+            updateBoard([...boardUpdated]);
+            onMinusTenPoints();
+            onMinusTurn();
+            return;
+        }
+        if(boardUpdated[x][y].shipName !== null && boardUpdated[x][y].status === "normal"){
+            let shipName = boardUpdated[x][y].shipName;
+            boardUpdated[x][y].status = "boomShip"
+            if(isShipDestroyed(shipName, boardUpdated)){
+                for(let i = 0; i < 10; i++){
+                    for(let j = 0; j < 10; j++){
+                        if(boardUpdated[i][j].shipName === shipName){
+                            boardUpdated[i][j].status = "shipDestroyed"
                         }
                     }
-                    updateBoard([...boardUpdated]);
-                    break;
-                }else{
-                    updateBoard([...boardUpdated]);
-                    break;
                 }
+                updateBoard([...boardUpdated]);
+                onMinusTurn();
+            }else{
+                updateBoard([...boardUpdated]);
+                onMinusTurn();
+            }
+            return;
         }
     }
 
     return(
         <div>
-            <div className="column-tags"><div className="column-tag">1</div> <div className="column-tag">2</div> <div className="column-tag">3</div> <div className="column-tag">4</div> <div className="column-tag">5</div> <div className="column-tag">6</div> <div className="column-tag">7</div> <div className="column-tag">8</div> <div className="column-tag">9</div> <div className="column-tag">10</div></div>
+            <ColumnTags/>
             <div className="row-direction">
-                <div className="row-tags"><div className="row-tag">A</div> <div className="row-tag">B</div> <div className="row-tag">C</div> <div className="row-tag">D</div> <div className="row-tag">E</div> <div className="row-tag">F</div> <div className="row-tag">G</div> <div className="row-tag">H</div> <div className="row-tag">I</div> <div className="row-tag">J</div></div>
+                <RowTags/>
                 <div className="board">
                     {
                         board?board.map(
@@ -61,11 +62,7 @@ const Board = ({board, updateBoard, isShipDestroyed, onMinusTurn}) => {
                                     if(board[i][j].status === "shipDestroyed"){
                                         imgSrc = pinGreen;
                                     }
-                                    return <Cell 
-                                                imgSrc={imgSrc}
-                                                key={finalKey} 
-                                                clicker={()=>onClick(i,j)}>{board[i][j]}
-                                    </Cell>
+                                    return <Cell imgSrc={imgSrc} key={finalKey} clicker={()=>onClickCell(i,j)}>{board[i][j]}</Cell>
                                 }
                             ))
                         ):null

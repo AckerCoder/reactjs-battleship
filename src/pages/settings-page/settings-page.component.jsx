@@ -9,12 +9,11 @@ import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 import "./settings-page.styles.scss"
 
-
 const SettingsPage = () => {
-    const [gameMode, setGameMode] = useState("SIMPLE");
+    const [gameMode, setGameMode] = useState("CUSTOM");
     const [playerName, setPlayerName] = useState("RAMDOM PLAYER");
     const [gameDifficulty, setGameDifficulty] = useState("MEDIUM");
-    const [numberOfTurns, setNumberOfTurns] = useState(-1);
+    const [numberOfTurns, setNumberOfTurns] = useState(100);
 
     const changeGameMode = () => {
         if(gameMode === "SIMPLE"){

@@ -1,0 +1,11 @@
+.row-tags {
+  display: flex;
+  flex-direction: column;
+  .row-tag {
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    color: white;
+    border: 1px solid transparent;
+  }
+}

@@ -1,0 +1,10 @@
+.column-tags {
+  display: flex;
+  margin-left: 1.75vh;
+  .column-tag {
+    display: flex;
+    justify-content: center;
+    width: 7vh;
+    color: white;
+  }
+}

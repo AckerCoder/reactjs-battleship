@@ -118,20 +118,6 @@ const setBoardUp = (board) => {
   });
 };
 
-const printBoard = (board) => {
-  for (let i = 0; i < 10; i++) {
-    let line = "";
-    for (let j = 0; j < 10; j++) {
-      if (board[i][j].shipName === null) {
-        line = line + "vacio   ";
-      } else {
-        line += board[i][j].shipName + "   ";
-      }
-    }
-    console.log(line);
-  }
-};
-
 const isShipDestroyed = (shipName, board) => {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
@@ -145,11 +131,5 @@ const isShipDestroyed = (shipName, board) => {
   }
   return true;
 };
-
-// let boardX = generateEmptyBoard();
-
-// setBoardUp(boardX);
-
-// printBoard(boardX);
 
 module.exports = { generateEmptyBoard, setBoardUp, isShipDestroyed };

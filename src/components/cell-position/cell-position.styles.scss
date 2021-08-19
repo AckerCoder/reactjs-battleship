@@ -1,0 +1,13 @@
+.cell-position {
+  color: white;
+  display: flex;
+  width: 50vw;
+  justify-content: space-around;
+  border-bottom: 0.5px solid;
+  .data {
+    display: flex;
+    width: 20vw;
+    justify-content: center;
+    font-size: large;
+  }
+}

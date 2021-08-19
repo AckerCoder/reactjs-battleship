@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Game from "./pages/game/game.component";
 import HomePage from "./pages/homepage/homepage.component";
+import ScoreTable from "./pages/score-table/score-table.component";
 import SettingsPage from "./pages/settings-page/settings-page.component";
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/game/:numberOfTurns/:playerName">
             <Game />
+          </Route>
+          <Route path="/score-table">
+            <ScoreTable />
           </Route>
         </Switch>
       </Router>

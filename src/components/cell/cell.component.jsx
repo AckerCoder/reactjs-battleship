@@ -1,7 +1,7 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 import "./cell.styles.scss"
-const Cell = ({clicker,children, imgSrc}) => {
+const Cell = ({clicker, imgSrc}) => {
     return(
         <div className="cell" onClick={clicker}>
             {

@@ -33,13 +33,4 @@ it("Expect to render TurnsController Component", () => {
       />
     ).length
   ).toEqual(1);
-
-  const wrapper = shallow(
-    <TurnsController
-      gameMode={mockGameModeSimple}
-      numberOfTurns={mockNumberOfTurns}
-      setNumberOfTurns={mockSetNumberOfTurnsClick}
-    />
-  );
-  wrapper.find('[id="b-1"]').simulate("click");
 });

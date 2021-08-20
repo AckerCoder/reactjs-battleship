@@ -3,7 +3,6 @@ import Cell from "../cell/cell.component";
 import ColumnTags from "../column-tags/column-tags.component";
 import { isShipDestroyed } from '../../utils/game-engine.utils';
 
-
 import pinRed from "../../assets/pins/red.png";
 import pinWhite from "../../assets/pins/white.png";
 import pinGreen from "../../assets/pins/green.png";

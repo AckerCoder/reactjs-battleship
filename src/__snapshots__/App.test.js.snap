@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect to Match Snapshot 1`] = `
+<div
+  className="App"
+>
+  <BrowserRouter>
+    <Switch>
+      <Route
+        exact={true}
+        path="/"
+      >
+        <HomePage />
+      </Route>
+      <Route
+        path="/settings-page"
+      >
+        <SettingsPage />
+      </Route>
+      <Route
+        path="/game/:numberOfTurns/:playerName"
+      >
+        <Game />
+      </Route>
+      <Route
+        path="/score-table"
+      >
+        <ScoreTable />
+      </Route>
+      <Route
+        path="/you-lost"
+      >
+        <YouLost />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+</div>
+`;

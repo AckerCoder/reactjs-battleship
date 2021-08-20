@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect to Match Snapshot 1`] = `
+<div
+  className="turns-counter"
+>
+  <h2 />
+  <span />
+</div>
+`;

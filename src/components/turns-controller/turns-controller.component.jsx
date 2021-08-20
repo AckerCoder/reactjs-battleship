@@ -10,7 +10,7 @@ const TurnsController = ({gameMode, numberOfTurns, setNumberOfTurns}) => {
         <div className="turns-controller">
             {
                 gameMode === "CUSTOM"?
-                    <CustomButton setting onClick={()=>{let newNumberOfTurns = numberOfTurns + 1; setNumberOfTurns(newNumberOfTurns)}}>
+                    <CustomButton id="b-1" setting onClick={()=>{let newNumberOfTurns = numberOfTurns + 1; setNumberOfTurns(newNumberOfTurns)}}>
                         <FontAwesomeIcon icon ={faAngleUp}/>
                     </CustomButton>
                 :null
@@ -18,7 +18,7 @@ const TurnsController = ({gameMode, numberOfTurns, setNumberOfTurns}) => {
             <span className="counter">{numberOfTurns > 0?numberOfTurns: <>&infin;</>}</span>
             {
                 gameMode === "CUSTOM"?
-                    <CustomButton setting onClick={()=>{let newNumberOfTurns = numberOfTurns - 1; setNumberOfTurns(newNumberOfTurns)}}>
+                    <CustomButton id="b-2" setting onClick={()=>{let newNumberOfTurns = numberOfTurns - 1; setNumberOfTurns(newNumberOfTurns)}}>
                         <FontAwesomeIcon icon ={faAngleDown}/>
                     </CustomButton>
                 :null

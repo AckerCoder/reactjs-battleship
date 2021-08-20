@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect to Match Snapshot 1`] = `
+<div
+  className="row-tags"
+>
+  <div
+    className="row-tag"
+  >
+    A
+  </div>
+  <div
+    className="row-tag"
+  >
+    B
+  </div>
+  <div
+    className="row-tag"
+  >
+    C
+  </div>
+  <div
+    className="row-tag"
+  >
+    D
+  </div>
+  <div
+    className="row-tag"
+  >
+    E
+  </div>
+  <div
+    className="row-tag"
+  >
+    F
+  </div>
+  <div
+    className="row-tag"
+  >
+    G
+  </div>
+  <div
+    className="row-tag"
+  >
+    H
+  </div>
+  <div
+    className="row-tag"
+  >
+    I
+  </div>
+  <div
+    className="row-tag"
+  >
+    J
+  </div>
+</div>
+`;

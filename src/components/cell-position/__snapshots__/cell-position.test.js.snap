@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect to Match Snapshot 1`] = `
+<div
+  className="cell-position"
+>
+  <span
+    className="data"
+  />
+  <span
+    className="data"
+  />
+  <span
+    className="data"
+  />
+</div>
+`;
